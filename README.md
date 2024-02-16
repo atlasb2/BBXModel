@@ -21,6 +21,8 @@ Follow the steps below to get a Unity project set up with this git repository.
     - `ProjectSettings`
     - `.collabignore`
 4. Open a terminal in the current folder. (ie inside the main project folder)
-5. `git clone https://github.com/atlasb2/BBXModel.git`
-    - <i>Note that if you have SSH keys setup and can clone with SSH, run</i> `git clone git@github.com:atlasb2/BBXModel.git` <i>instead.</i>
+5. `git init`
+6. `git remote add origin https://github.com/atlasb2/BBXModel.git`. <i>(To clone with SSH, run</i> `git remote add origin git@github.com:atlasb2/BBXModel.git` <i>instead.)</i>
+7. `git fetch`
+8. `git checkout main`
 6. Open the Unity Project back up. You should be good to go.

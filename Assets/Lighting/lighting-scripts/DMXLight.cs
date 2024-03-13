@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class Light : MonoBehaviour
+public class DMXLight : MonoBehaviour
 {
   // Light Channel class. Used to be able to give each channel a name and value.
 	[System.Serializable]
@@ -15,11 +15,11 @@ public class Light : MonoBehaviour
 		public int value = 0;
 	}
 
-  // First DMX channel of the light
+  // First DMX channel of the DMXlight
 	[SerializeField]
   private int firstChannelNumber = 1;
 
-  // Number of channels on light
+  // Number of channels on DMXlight
   [SerializeField]
   private LightChannel[] numberOfChannels = new LightChannel[5];
 	private int channelNumber;  // Efficiency variable for FixedUpdate method

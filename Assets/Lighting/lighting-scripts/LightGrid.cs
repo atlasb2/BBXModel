@@ -89,8 +89,12 @@ public class LightGrid : MonoBehaviour
 	private void transmit()
 	{
 		// Only transmit a packet if something has changed
-		if (previousData == data)
-			return;
+		//if (previousData == data) {
+		//	Debug.Log("NO DATA CHANGE");
+		//	return;
+		//} else {
+		//	Debug.Log("DMX DATA CHANGE!!!!");
+		//}
 
 		// Copy channel data to the ArtNetPacket. Set record historical data.
 		Buffer.BlockCopy(data, 0, artNetPacket, 18, 512);
@@ -130,6 +134,7 @@ public class LightGrid : MonoBehaviour
 		if ((value < 0) || value > 255) return false;
 
 		// Set the data
+		//Debug.Log("LIGHTGRID: ch:" + channel + " " + value);
 		data[channel - 1] = Convert.ToByte(value);
 		return true;
 	}

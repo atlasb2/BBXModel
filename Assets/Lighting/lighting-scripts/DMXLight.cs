@@ -40,6 +40,7 @@ public class DMXLight : MonoBehaviour
     for (int i = 0; i < numberOfChannels.Length; i++)
     {
       channelNumber = i + firstChannelNumber;
+      Debug.Log("Setting channel " + channelNumber);
       if (!lightGrid.setChannel(channelNumber, numberOfChannels[i].value))
         Debug.Log("CHANNEL SETTING FAILED ON CHANNEL NUMBER " + channelNumber);
     }

@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using System.Linq;
+using System.Text;
 using System.Net.Sockets;
 using System.Net;
 
@@ -21,7 +23,7 @@ public class LightGrid : MonoBehaviour
 
 	// Output frequency
 	[SerializeField]
-	private float outputHz = 44;
+	private float outputHz = 44f;
 
 	// Socket variables
 	private UdpClient socket;
@@ -89,13 +91,13 @@ public class LightGrid : MonoBehaviour
 	private void transmit()
 	{
 		// Only transmit a packet if something has changed
-		if (previousData == data)
+		if (previousData.SequenceEqual(data))
 			return;
 
 		// Copy channel data to the ArtNetPacket. Set record historical data.
 		Buffer.BlockCopy(data, 0, artNetPacket, 18, 512);
-		previousData = data;
-
+		Buffer.BlockCopy(data, 0, previousData, 0, 512);
+		
 		// Send data across the socket. Report any errors
 		try
 		{

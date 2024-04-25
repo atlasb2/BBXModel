@@ -272,6 +272,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4389074118482612531, guid: 142632235e59f6e42af83c7959716c49, type: 3}
+      propertyPath: outputHz
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4389074118482612531, guid: 142632235e59f6e42af83c7959716c49, type: 3}
       propertyPath: destinationIP
       value: 192.168.51.25
       objectReference: {fileID: 0}

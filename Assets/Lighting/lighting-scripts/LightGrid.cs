@@ -132,6 +132,7 @@ public class LightGrid : MonoBehaviour
 		if ((value < 0) || value > 255) return false;
 
 		// Set the data
+		//Debug.Log("LIGHTGRID: ch:" + channel + " " + value);
 		data[channel - 1] = Convert.ToByte(value);
 		return true;
 	}
